@@ -18,7 +18,7 @@
 		"test": "jest"
 	},
 	"lint-staged": {
-		"packages/**/lib/**/*.{ts,tsx,js,jsx,vue,css,scss,less,styl}": [
+		"packages/**/lib/**/*.{ts,tsx,js,jsx,vue}": [
 			"prettier --write",
 			"eslint --fix",
 			"git add"
