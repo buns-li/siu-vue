@@ -1,0 +1,45 @@
+{
+  "name": "@siu/vui",
+  "description": "@siu/vui",
+  "version": "1.0.0",
+  "keywords": [
+    "vui",
+    "VUI",
+    "vui",
+    "ui",
+    "vue",
+    "@siu"
+  ],
+  "author": "lizp <lizp@jxgtmbjt.com>",
+  "homepage": "https://github.com/buns-li/siu-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buns-li/siu-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buns-li/siu-vue/issues"
+  },
+  "license": "ISC",
+  "globalName": "VUI",
+  "unpkg": "dist/vui.js",
+  "modern": "dist/vui.modern.js",
+  "module": "lib/index.ts",
+  "main": "lib/index.ts",
+  "style": "dist/index.css",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "build": "siu build @siu/vui"
+  },
+  "dependencies": {
+    "@siu-vui/shared": "1.0.0"
+  }
+}
