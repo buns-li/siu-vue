@@ -1,1 +1,1 @@
-module.export = require("@siu/cli-config").lint.stylelint;
+module.exports = require("@siu/cli-config").lint.stylelint;
