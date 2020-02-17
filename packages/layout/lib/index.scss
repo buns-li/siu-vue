@@ -1,0 +1,15 @@
+.v-layout,
+.v-layout * {
+	box-sizing: border-box;
+}
+
+.v-layout {
+	display: flex;
+	flex: auto;
+	flex-direction: column;
+	min-height: 0;
+
+	&.has-aside {
+		flex-direction: row;
+	}
+}
