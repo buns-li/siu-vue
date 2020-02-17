@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "experimentalDecorators":true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": true,
@@ -19,14 +19,22 @@
       "dom",
       "dom.iterable",
       "scripthost"
-		],
+    ],
     "outDir": "dist",
-		"baseUrl": ".",
-		"rootDir": ".",
-    "paths":{
-			"@siu-vui/shared":["./packages/shared/lib/index.ts"]
-		},
-		"declaration": false
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@siu-vui/shared": [
+        "./packages/shared/lib/index.ts"
+      ],
+      "@siu-vue/*": [
+        "packages/*/lib/index.ts"
+      ],
+      "@siu/*": [
+        "packages/*/lib/index.ts"
+      ]
+    },
+    "declaration": false
   },
   "include": [
     "packages/**/lib/*.ts",
