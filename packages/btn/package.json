@@ -1,0 +1,45 @@
+{
+  "name": "@siu-vue/btn",
+  "description": "@siu-vue/btn",
+  "version": "1.0.0",
+  "keywords": [
+    "btn",
+    "vbtn",
+    "vui",
+    "ui",
+    "vue",
+    "@siu-vue"
+  ],
+  "author": "lizp <lizp@jxgtmbjt.com>",
+  "homepage": "https://github.com/buns-li/siu-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buns-li/siu-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buns-li/siu-vue/issues"
+  },
+  "license": "MIT",
+  "globalName": "Btn",
+  "unpkg": "dist/btn.js",
+  "modern": "dist/btn.modern.js",
+  "module": "lib/index.ts",
+  "main": "lib/index.ts",
+  "style": "dist/index.css",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "build": "siu build @siu-vue/btn"
+  },
+  "dependencies": {
+    "@siu-vui/shared": "1.0.0"
+  }
+}

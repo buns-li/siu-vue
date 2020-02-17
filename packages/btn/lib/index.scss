@@ -1,0 +1,59 @@
+@import "../../../assets/variable.scss";
+
+.v-btn {
+	position: relative;
+	display: inline-block;
+	height: 32px;
+	padding: 0 15px;
+	border: 1px solid transparent;
+	border-color: $color-border;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 0.65);
+	background-image: none;
+	background-color: #fff;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.499;
+	white-space: nowrap;
+	text-align: center;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	cursor: pointer;
+	touch-action: manipulation;
+	user-select: none;
+
+	&,
+	&:active,
+	&:focus {
+		outline: 0;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $primary-light;
+		color: $primary-light;
+		background-color: #fff;
+	}
+
+	&:focus,
+	&:hover,
+	&:active,
+	&.active {
+		background: #fff;
+		text-decoration: none;
+	}
+
+	&.is-primary {
+		border-color: $primary;
+		color: #fff;
+		background-color: $primary;
+		box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+
+		&:hover,
+		&:focus {
+			border-color: $primary-light;
+			color: #fff;
+			background-color: $primary-light;
+		}
+	}
+}
