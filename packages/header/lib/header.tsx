@@ -13,7 +13,7 @@ export default class Header extends TSX<IProps> {
 	render(): JSX.Element {
 		return (
 			<header
-				class={["v-layout-header", this.fixed && "is-fixed"].filter(Boolean)}
+				class={["v-layout-header", this.className, this.fixed && "is-fixed"].filter(Boolean)}
 				style={{ height: this.height + "px", lineHeight: this.height + "px" }}
 			>
 				{this.$slots.default || null}
