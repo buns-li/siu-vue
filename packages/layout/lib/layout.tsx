@@ -1,4 +1,4 @@
-import { TSX } from "@siu-vui/shared";
+import { TSX } from "@siu-vue/shared";
 import { Component, Prop } from "vue-property-decorator";
 import { IProps } from "../types";
 
