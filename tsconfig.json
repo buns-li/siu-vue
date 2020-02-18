@@ -1,48 +1,29 @@
 {
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": false,
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ],
-    "outDir": "dist",
-    "baseUrl": ".",
-    "rootDir": ".",
-    "paths": {
-      "@siu-vui/shared": [
-        "./packages/shared/lib/index.ts"
-      ],
-      "@siu-vue/*": [
-        "packages/*/lib/index.ts"
-      ],
-      "@siu/*": [
-        "packages/*/lib/index.ts"
-      ]
-    },
-    "declaration": false
-  },
-  "include": [
-    "packages/**/lib/*.ts",
-    "packages/**/lib/*.tsx",
-    "types/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"noUnusedLocals": true,
+		"noImplicitAny": true,
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"jsx": "preserve",
+		"importHelpers": false,
+		"lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+		"outDir": "dist",
+		"baseUrl": ".",
+		"rootDir": ".",
+		"paths": {
+			"@siu-vue/*": ["packages/*/lib/index.ts"],
+			"@siu/*": ["packages/*/lib/index.ts"]
+		},
+		"declaration": false
+	},
+	"include": ["packages/**/lib/*.ts", "packages/**/lib/*.tsx", "types/**/*"],
+	"exclude": ["node_modules", "dist"]
 }
