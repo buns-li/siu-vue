@@ -11,7 +11,7 @@ class Layout extends TSX<IProps> {
 
 	render(): JSX.Element {
 		return (
-			<section class={["sv-layout", this.hasAside && `has-aside`, this.className].filter(Boolean)}>
+			<section class={["v-layout", this.hasAside && `has-aside`, this.className].filter(Boolean)}>
 				{this.$slots.default || null}
 			</section>
 		);

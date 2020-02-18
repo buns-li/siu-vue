@@ -12,4 +12,8 @@
 	&.has-aside {
 		flex-direction: row;
 	}
+
+	&.has-aside > & {
+		overflow-x: hidden;
+	}
 }
