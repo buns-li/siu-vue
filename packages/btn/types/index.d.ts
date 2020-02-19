@@ -1,10 +1,12 @@
+import Vue, { VueConstructor } from "vue";
+
 export type BtnType = "primary" | "success" | "danger" | "warning" | "dashed" | "link";
 
 export type BtnSize = "small" | "medium" | "large";
 
 export type BtnShape = "circle" | "round";
 
-export interface IProps {
+export type BtnProps = {
 	/**
 	 * 设置 button 原生的 type 值，可选值请参考 HTML 标准
 	 */
@@ -37,4 +39,9 @@ export interface IProps {
 	 * 设置按钮的图标类型
 	 */
 	icon?: string;
+};
+
+export declare class Btn extends Vue {
+	static install(vue: typeof Vue): void;
+	props: (Readonly<{}> & Readonly<BtnProps>) | undefined;
 }

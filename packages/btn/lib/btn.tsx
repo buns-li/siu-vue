@@ -1,11 +1,11 @@
 import { TSX } from "@siu-vue/shared";
 import { Component, Prop } from "vue-property-decorator";
-import { IProps, BtnType, BtnShape, BtnSize } from "../types";
+import { BtnProps, BtnType, BtnShape, BtnSize } from "../types";
 
 @Component({
 	name: "Btn"
 })
-export default class Btn extends TSX<IProps> {
+export default class Btn extends TSX<BtnProps> {
 	@Prop({ default: "button" }) htmlType!: string;
 	@Prop(Boolean) disabled?: boolean;
 	@Prop(String) type?: BtnType;

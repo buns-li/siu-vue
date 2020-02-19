@@ -1,10 +1,9 @@
 import { VueConstructor } from "vue";
 
 import Btn from "@siu-vue/btn";
-import Header from "@siu-vue/header";
 import Layout from "@siu-vue/layout";
 
-const Components = [Btn, Header, Layout];
+const Components = [Btn, Layout];
 
 const VUI = {
 	install(Vue: VueConstructor) {
@@ -13,7 +12,6 @@ const VUI = {
 		});
 	},
 	Btn,
-	Header,
 	Layout
 };
 

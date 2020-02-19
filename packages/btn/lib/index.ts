@@ -1,12 +1,13 @@
-import { VueConstructor } from "vue";
+import Vue from "vue";
+
 import Btn from "./btn";
 
-Btn.install = function(Vue: VueConstructor): void {
-	Vue.component(Btn.name, Btn);
+Btn.install = function(vue: typeof Vue): void {
+	vue.component(Btn.name, Btn);
 };
 
 if (typeof window !== "undefined" && window.Vue) {
-	Btn.install(window.Vue as VueConstructor);
+	Btn.install(window.Vue);
 }
 
 export default Btn;
