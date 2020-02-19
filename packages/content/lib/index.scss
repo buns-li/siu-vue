@@ -1,9 +1,0 @@
-.v-layout {
-	&-content {
-		flex: auto;
-	}
-
-	&.has-child > &-content {
-		overflow-x: hidden;
-	}
-}
