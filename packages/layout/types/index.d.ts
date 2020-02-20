@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue, { VNode } from "vue";
 
 export interface LayoutProps {
 	/*
@@ -31,6 +31,8 @@ export declare class Footer extends Vue {
 	props: (Readonly<{}> & Readonly<LayoutBlockProps>) | undefined;
 }
 
+export type AsiderTriggerFn = (collapseStatus: boolean, supportClassName: string) => VNode[] | undefined;
+
 export interface AsiderProps extends LayoutBlockProps {
 	/**
 	 *
@@ -60,6 +62,12 @@ export interface AsiderProps extends LayoutBlockProps {
 	 * @type boolean
 	 */
 	collapsiable?: boolean;
+	/**
+	 * 自定义触发器
+	 *
+	 * @type AsiderTriggerFn
+	 */
+	trigger?: AsiderTriggerFn;
 }
 
 export declare class Asider extends Vue {

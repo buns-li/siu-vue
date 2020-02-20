@@ -24,7 +24,7 @@
 	"unpkg": "dist/layout.js",
 	"modern": "dist/layout.modern.js",
 	"module": "lib/index.ts",
-	"main": "lib/index.ts",
+	"main": "dist/layout.cjs.js",
 	"style": "dist/index.css",
 	"types": "types/index.d.ts",
 	"files": [

@@ -46,7 +46,7 @@ $header-height: 64px;
 	&-aside {
 		position: relative;
 		min-width: 0;
-		background: #fff;
+		background: #333758;
 		transition: all 0.2s;
 	}
 
@@ -55,10 +55,6 @@ $header-height: 64px;
 			> * {
 				overflow: hidden;
 			}
-		}
-
-		&.has-trigger {
-			padding-bottom: 48px;
 		}
 
 		&-content {

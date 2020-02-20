@@ -6,6 +6,7 @@ Layout.install = function(vue: typeof Vue): void {
 	vue.component(Layout.Header.name, Layout.Header);
 	vue.component(Layout.Content.name, Layout.Content);
 	vue.component(Layout.Footer.name, Layout.Footer);
+	vue.component(Layout.Asider.name, Layout.Asider);
 };
 
 if (typeof window !== "undefined" && window.Vue) {

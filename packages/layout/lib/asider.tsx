@@ -1,27 +1,49 @@
 import { TSX } from "@siu-vue/shared";
-import { Component, Prop, Model } from "vue-property-decorator";
-
-import { AsiderProps } from "../types";
+import { Component, Prop, Model, Watch } from "vue-property-decorator";
+import { AsiderProps, AsiderTriggerFn } from "../types";
 
 @Component({
 	name: "Asider"
 })
 export default class Asider extends TSX<AsiderProps> {
+	@Model("collapse", { type: Boolean, default: false }) collapsed?: boolean;
 	@Prop(String) cls?: string;
 	@Prop({ type: Number, default: 256 }) width!: number;
 	@Prop({ type: Number, default: 80 }) collapsedWidth?: number;
 	@Prop(Boolean) collapsible?: boolean;
-	@Model("collapsed", { type: Boolean, default: false }) collapsed?: boolean;
+	@Prop(Function) trigger?: AsiderTriggerFn;
+	@Prop({ type: Number, default: "768" }) breakpointWidth?: number;
 
-	private isCollapsed: boolean;
+	private mql: MediaQueryList | undefined;
 
-	constructor() {
-		super();
-		this.isCollapsed = !!this.collapsed;
+	private isCollapsed = false;
+
+	@Watch("collapsed")
+	onCollapseChanged(val: boolean) {
+		this.isCollapsed = val;
 	}
 
-	onCollapsed() {
-		this.$emit("collapsed", !this.collapsed);
+	responsiveHandler(): void {
+		if (this.mql) {
+			this.$emit("breakpoint", this.mql.matches);
+		}
+	}
+
+	created() {
+		this.isCollapsed = !!this.collapsed;
+
+		if (window.matchMedia && this.breakpointWidth) {
+			(this.mql = window.matchMedia(`(max-width: ${this.breakpointWidth}px)`)).addEventListener(
+				"change",
+				this.responsiveHandler
+			);
+		}
+	}
+
+	beforeDestroy() {
+		if (this.mql) {
+			this.mql.removeEventListener("change", this.responsiveHandler);
+		}
 	}
 
 	render() {
@@ -36,7 +58,7 @@ export default class Asider extends TSX<AsiderProps> {
 					this.cls,
 					this.isCollapsed && "is-collapsed",
 					isZeroWidth && "is-zero-width",
-					!isZeroWidth && this.$slots.trigger && "has-trigger"
+					this.trigger && "has-trigger"
 				].filter(Boolean)}
 				style={{
 					width: asideWidth,
@@ -47,7 +69,7 @@ export default class Asider extends TSX<AsiderProps> {
 				}}
 			>
 				<div class="v-layout-aside-content">{this.$slots.default}</div>
-				{this.$slots.trigger}
+				{this.trigger ? this.trigger(this.isCollapsed, "v-layout-aside-trigger") : null}
 			</aside>
 		);
 	}

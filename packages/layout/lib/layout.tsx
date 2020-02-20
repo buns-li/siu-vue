@@ -2,6 +2,8 @@ import { TSX, CreateElement, VNode } from "@siu-vue/shared";
 import { Component, Prop } from "vue-property-decorator";
 import { LayoutProps, LayoutBlockProps } from "../types";
 
+import Asider from "./asider";
+
 function createBlock(
 	h: CreateElement,
 	tag: "header" | "footer" | "content",
@@ -54,18 +56,18 @@ class Footer extends TSX<LayoutBlockProps> {
 	name: "Layout"
 })
 class Layout extends TSX<LayoutProps> {
-	@Prop(String) className?: string;
-	@Prop(Boolean) hasAside?: boolean;
 	static Header: typeof Header;
 	static Content: typeof Content;
 	static Footer: typeof Footer;
+	static Asider: typeof Asider;
+
+	@Prop(String) className?: string;
+	@Prop(Boolean) hasAside?: boolean;
 
 	render(): JSX.Element {
-		this.$slots;
-
 		return (
 			<section class={["v-layout", this.hasAside && `has-aside`, this.className].filter(Boolean)}>
-				{this.$slots.default || null}
+				{this.$slots.default}
 			</section>
 		);
 	}
@@ -74,5 +76,6 @@ class Layout extends TSX<LayoutProps> {
 Layout.Header = Header;
 Layout.Content = Content;
 Layout.Footer = Footer;
+Layout.Asider = Asider;
 
 export default Layout;
