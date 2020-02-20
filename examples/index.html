@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@siu/vui测试</title>
+	<link rel="stylesheet" href="../packages/vui/dist/vui.modern.css">
+	<style>
+		.v-layout-header,
+		.v-layout-content,
+		.v-layout-footer {
+			color: #fff;
+			background: #7dbcea;
+			text-align: center;
+		}
+
+		.v-layout-content {
+			min-height: 120px;
+			color: #fff;
+			background: rgba(16, 142, 233, 1);
+			line-height: 120px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<Layout has-aside>
+			<Asider v-model="collapsed" :collapsed-width="0" :breakpoint-width="1366" @breakpoint="onBreakpoint">
+				<ul>
+					<li>1</li>
+					<li>1</li>
+					<li>1</li>
+					<li>1</li>
+					<li>1</li>
+				</ul>
+			</Asider>
+			<Layout>
+				<v-header>
+					<div @click="onHeaderClick">Header</div>
+				</v-header>
+				<v-content>content</v-content>
+				<v-footer>footer</v-footer>
+			</Layout>
+		</Layout>
+	</div>
+
+	<script src="//cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+	<script src="//unpkg.com/vue-class-component@7.2.3/dist/vue-class-component.js"></script>
+	<script src="//unpkg.com/vue-property-decorator@8.4.0/lib/vue-property-decorator.umd.js"></script>
+	<script src="../packages/vui/dist/vui.modern.js"></script>
+	<script>
+		new Vue({
+			el: "#app",
+			components: {
+				VHeader: VUI.Layout.Header,
+				VContent: VUI.Layout.Content,
+				VFooter: VUI.Layout.Footer
+			},
+			data() {
+				return {
+					collapsed: false
+				}
+			},
+			methods: {
+				onHeaderClick() {
+					console.log(1)
+					this.collapsed = !this.collapsed
+				},
+				onBreakpoint(matches) {
+					console.log("breakpoint:", matches)
+
+					this.collapsed = matches;
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>
