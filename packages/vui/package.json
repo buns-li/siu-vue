@@ -24,7 +24,7 @@
 	"unpkg": "dist/vui.js",
 	"modern": "dist/vui.modern.js",
 	"module": "lib/index.ts",
-	"main": "lib/index.ts",
+	"main": "dist/vui.cjs.js",
 	"style": "dist/index.css",
 	"types": "types/index.d.ts",
 	"files": [

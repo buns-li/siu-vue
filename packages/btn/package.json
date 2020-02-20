@@ -24,7 +24,7 @@
 	"unpkg": "dist/btn.js",
 	"modern": "dist/btn.modern.js",
 	"module": "lib/index.ts",
-	"main": "lib/index.ts",
+	"main": "dist/btn.cjs.js",
 	"style": "dist/index.css",
 	"types": "types/index.d.ts",
 	"files": [

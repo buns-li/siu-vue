@@ -36,9 +36,9 @@ export default class Btn extends TSX<BtnProps> {
 					disabled && `is-disabled`
 				].filter(Boolean)}
 			>
-				{loading ? <i class="v-i-loading"></i> : null}
+				{loading ? <i class="vi-loading"></i> : null}
 				{icon && !loading ? <i class={icon}></i> : null}
-				{this.$slots.default || null}
+				{this.$slots.default}
 			</button>
 		);
 	}

@@ -1,4 +1,4 @@
-import { VueConstructor } from "vue";
+import Vue from "vue";
 
 import Btn from "@siu-vue/btn";
 import Layout from "@siu-vue/layout";
@@ -6,9 +6,9 @@ import Layout from "@siu-vue/layout";
 const Components = [Btn, Layout];
 
 const VUI = {
-	install(Vue: VueConstructor) {
+	install(vue: typeof Vue) {
 		Components.forEach(cmp => {
-			cmp.install(Vue);
+			cmp.install(vue);
 		});
 	},
 	Btn,
