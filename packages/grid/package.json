@@ -1,0 +1,49 @@
+{
+  "name": "@siu-vue/grid",
+  "description": "@siu-vue/grid",
+  "version": "1.0.0",
+  "keywords": [
+    "grid",
+    "Grid",
+    "vui",
+    "ui",
+    "vue",
+    "@siu-vue"
+  ],
+  "author": "buns <zpli_buns@126.com>",
+  "homepage": "https://github.com/buns-li/siu-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buns-li/siu-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buns-li/siu-vue/issues"
+  },
+  "license": "ISC",
+  "globalName": "Grid",
+  "unpkg": "dist/grid.js",
+  "modern": "dist/grid.modern.js",
+  "module": "lib/index.ts",
+  "main": "dist/grid.cjs.js",
+  "style": "dist/index.css",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "build": "siu build grid"
+  },
+  "dependencies": {
+    "@siu-vue/shared": "1.0.0",
+    "enquire.js": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/enquire.js": "2.1.2"
+  }
+}
