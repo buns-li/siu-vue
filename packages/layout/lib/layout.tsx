@@ -61,12 +61,12 @@ class Layout extends TSX<LayoutProps> {
 	static Footer: typeof Footer;
 	static Asider: typeof Asider;
 
-	@Prop(String) className?: string;
+	@Prop(String) cls?: string;
 	@Prop(Boolean) hasAside?: boolean;
 
 	render(): JSX.Element {
 		return (
-			<section class={["v-layout", this.hasAside && `has-aside`, this.className].filter(Boolean)}>
+			<section class={["v-layout", this.hasAside && `has-aside`, this.cls].filter(Boolean)}>
 				{this.$slots.default}
 			</section>
 		);
