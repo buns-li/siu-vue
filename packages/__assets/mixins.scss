@@ -1,0 +1,62 @@
+@mixin clearfix() {
+	zoom: 1;
+
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+@mixin make-row($gutter: 0) {
+	position: relative;
+	height: auto;
+	margin-right: ($gutter / -2);
+	margin-left: ($gutter / -2);
+
+	@include clearfix();
+}
+
+@mixin loop-grid-cols($class) {
+	@for $index from 0 to $grid-columns + 1 {
+		.v-col#{$class}-#{$index} {
+			@if $index == 0 {
+				display: none;
+			} @else {
+				width: percentage($index/$grid-columns);
+			}
+		}
+
+		.v-col#{$class}-pull-#{$index} {
+			@if $index == 0 {
+				right: none;
+			} @else {
+				right: percentage($index/$grid-columns);
+			}
+		}
+
+		.v-col#{$class}-push-#{$index} {
+			@if $index == 0 {
+				left: none;
+			} @else {
+				left: percentage($index/$grid-columns);
+			}
+		}
+
+		.v-col#{$class}-offset-#{$index} {
+			@if $index == 0 {
+				margin-left: 0;
+			} @else {
+				margin-left: percentage($index/$grid-columns);
+			}
+		}
+
+		.v-col#{$class}-order-#{$index} {
+			order: $index;
+		}
+	}
+}
