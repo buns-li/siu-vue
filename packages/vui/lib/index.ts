@@ -2,8 +2,9 @@ import Vue from "vue";
 
 import Btn from "@siu-vue/btn";
 import Layout from "@siu-vue/layout";
+import Grid from "@siu-vue/grid";
 
-const Components = [Btn, Layout];
+const Components = [Btn, Layout, Grid];
 
 const VUI = {
 	install(vue: typeof Vue) {
@@ -12,7 +13,9 @@ const VUI = {
 		});
 	},
 	Btn,
-	Layout
+	Layout,
+	Row: Grid.Row,
+	Col: Grid.Col
 };
 
 if (typeof window !== "undefined" && window.Vue) {
