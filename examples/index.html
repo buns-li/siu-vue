@@ -40,7 +40,16 @@
 				<v-header>
 					<div @click="onHeaderClick">Header</div>
 				</v-header>
-				<v-content>content</v-content>
+				<v-content>
+					<div>content</div>
+					<Row>
+						<v-col :span="8" :push="16">col-8-16</v-col>
+						<v-col :span="16" :pull="8">col-16-8</v-col>
+					</Row>
+					<Row :gutter="10" type="flex" align="top">
+						<v-col :span="24">col-24</v-col>
+					</Row>
+				</v-content>
 				<v-footer>footer</v-footer>
 			</Layout>
 		</Layout>
@@ -56,7 +65,8 @@
 			components: {
 				VHeader: VUI.Layout.Header,
 				VContent: VUI.Layout.Content,
-				VFooter: VUI.Layout.Footer
+				VFooter: VUI.Layout.Footer,
+				VCol: VUI.Col
 			},
 			data() {
 				return {
