@@ -5,7 +5,9 @@ const Grid = {
 	install: function(vue: typeof Vue): void {
 		vue.component(Row.name, Row);
 		vue.component(Col.name, Col);
-	}
+	},
+	Row,
+	Col
 };
 
 if (typeof window !== "undefined" && window.Vue) {

@@ -55,6 +55,12 @@ export interface RowProps {
 export declare class Row extends Vue {
 	static install(vue: typeof Vue): void;
 	props: (Readonly<{}> & Readonly<RowProps>) | undefined;
+	/**
+	 * 计算gutter的实际值
+	 *
+	 * @returns number
+	 */
+	public calcGutter(): number;
 }
 
 export type ColSomeProps = Pick<ColProps, "offset" | "pull" | "push">;
